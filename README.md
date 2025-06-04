@@ -20,7 +20,7 @@ VOICEVOXを使用しています。
 VOICEVOX:ずんだもん
 
 ### 天気予報
-(https://weather.tsukumijima.net/)を使用しました。このデータは気象庁から提供されています。
+[天気予報 API（livedoor 天気互換）](https://weather.tsukumijima.net/)を使用しました。このデータは気象庁から提供されています。
 
 ### 生成AI
-(https://github.com/openai/openai-python)を使っています。
+[OpenAI Python API library](https://github.com/openai/openai-python)を使っています。
