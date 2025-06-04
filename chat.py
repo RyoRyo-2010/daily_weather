@@ -1,3 +1,4 @@
+from openai import OpenAI
 
 def create_prompt(setumei_text, chance_of_rains, teletop):
     """
@@ -16,3 +17,20 @@ def create_prompt(setumei_text, chance_of_rains, teletop):
     Based on this information, write a concise explanation in JAPANESE.簡潔に！
     """
     return prompt.strip()  # 不要な空白を削除して返す
+
+def post_for_chatgpt(prompt):
+    """
+    ChatGPTにプロンプトを投げて、応答を取得する関数
+    """
+    # ここでは、ChatGPT APIを呼び出すコードを実装する必要があります。
+    # 例えば、requestsライブラリを使ってPOSTリクエストを送信するなど。
+    # ただし、この関数の実装は省略します。
+    client = OpenAI()
+
+    response = client.responses.create(
+        model="o4-mini",
+        input=prompt,
+        # limit=40  # 必要に応じて調整
+    )
+
+    return response.output_text

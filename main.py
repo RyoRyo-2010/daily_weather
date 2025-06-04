@@ -18,3 +18,6 @@ if __name__ == "__main__":
     prompt = chat.create_prompt(setumei_text, chance_of_rains, teletop)
 
     print("できたてのプロンプト:" + prompt)
+
+    response = chat.post_for_chatgpt(prompt)
+    print("ChatGPTの応答:" + response)
