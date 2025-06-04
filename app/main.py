@@ -1,6 +1,6 @@
 import weather
 import chat
-import weather
+import voice
 
 if __name__ == "__main__":
     print("daily_weather is starting...")
@@ -21,3 +21,7 @@ if __name__ == "__main__":
 
     response = chat.post_for_chatgpt(prompt)
     print("ChatGPTの応答:" + response)
+
+    # 思い切って音声合成してみる
+    voice.synthesize(response, speaker=1, output_path=f"output.wav")
+    print("音声合成が完了しました。output.wavに保存されました。")
