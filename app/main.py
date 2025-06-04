@@ -4,6 +4,11 @@ import voice
 import datetime
 if __name__ == "__main__":
     print("daily_weather is starting...")
+    # 日付を取得して表示用に整形
+    today = datetime.datetime.now()
+    date_str = f"今日は{today.month}月{today.day}日です。"
+    print(date_str)
+
     # まず、天気予報を取得
     (setumei_text, chance_of_rains, teletop) = weather.get_weather()
     if setumei_text is None:
@@ -25,5 +30,5 @@ if __name__ == "__main__":
     print("ChatGPTの応答:" + response)
 
     # 思い切って音声合成してみる
-    voice.synthesize(response)
+    voice.synthesize(f"おはようございます。{date_str}今日の山口県中部の天気をお伝えします。{response}今日も良い一日をお過ごしください。")
     print("音声合成が完了しました。output.wavに保存されました。")
