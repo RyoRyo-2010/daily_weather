@@ -1,4 +1,5 @@
 from openai import OpenAI
+from datetime import datetime
 
 def create_prompt(setumei_text, chance_of_rains, teletop):
     """
@@ -6,7 +7,9 @@ def create_prompt(setumei_text, chance_of_rains, teletop):
     """
     # 'T00_06': '--%', 'T06_12': '--%', 'T12_18': '--%', 'T18_24': '0%'}
 
+    today_str = datetime.now().strftime("Today is %-m/%-d.")
     prompt = f"""
+    {today_str}
     You are a weather forecast expert.
     Summarize the weather forecast for today between 8am and 5pm in simple Japanese.
     Example: "今日は1日を通してよく晴れるでしょう" or "お昼から雨が降るようです".
