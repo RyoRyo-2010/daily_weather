@@ -14,7 +14,7 @@ def get_audio_query(text, speaker=1):
     resp.raise_for_status()
     return resp.json()
 
-def synthesize(text, speaker=1, output_path="/app/data/output.wav"):
+def synthesize(text, speaker=1, output_path="/daily_weather/app/data/output.wav"):
     """
     テキストをVOICEVOXで音声合成し、WAVファイルとして保存する
     """
