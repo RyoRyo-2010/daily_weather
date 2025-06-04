@@ -1,8 +1,8 @@
 import requests
 
 def get_weather():
-    URL = "https://weather.tsukumijima.net/api/forecast?city=350020"
-    res = requests.get(URL)
+    weather_URL = "https://weather.tsukumijima.net/api/forecast?city=350020"
+    res = requests.get(weather_URL)
     if res.status_code == 200:
         data = res.json()
         setumei_text = data["description"]["bodyText"] # 山口県は、高気圧...
