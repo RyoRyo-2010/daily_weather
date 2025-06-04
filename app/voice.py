@@ -1,4 +1,5 @@
 import requests
+import os
 
 VOICEVOX_URL = "http://voicevox:50021"
 
@@ -13,10 +14,16 @@ def get_audio_query(text, speaker=1):
     resp.raise_for_status()
     return resp.json()
 
-def synthesize(text, speaker=1, output_path="output.wav"):
+def synthesize(text, speaker=1, output_path="data/output.wav"):
     """
     テキストをVOICEVOXで音声合成し、WAVファイルとして保存する
     """
+
+    # ディレクトリが存在しない場合は作成
+    output_dir = os.path.dirname(output_path)
+    if output_dir and not os.path.exists(output_dir):
+        os.makedirs(output_dir, exist_ok=True)
+
     audio_query = get_audio_query(text, speaker)
     resp = requests.post(
         f"{VOICEVOX_URL}/synthesis",

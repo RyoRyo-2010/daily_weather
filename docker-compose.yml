@@ -9,7 +9,7 @@ services:
       - TZ=Asia/Tokyo
     env_file: .env
     volumes:
-      - ./data:/app/data
+      - ./data:./app/data
   
   voicevox:
     image: voicevox/voicevox_engine:cpu-latest
