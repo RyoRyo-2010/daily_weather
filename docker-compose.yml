@@ -10,7 +10,8 @@ services:
     env_file: .env
     volumes:
       - ./data:/daily_weather/app/data
-  
+    command: sleep infinity 
+
   voicevox:
     image: voicevox/voicevox_engine:cpu-latest
     container_name: voicevox
