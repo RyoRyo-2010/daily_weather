@@ -12,4 +12,3 @@ def get_weather():
     else:
         print("天気予報の取得に失敗しました。")
         return None, None, None
-
