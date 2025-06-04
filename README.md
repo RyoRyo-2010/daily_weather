@@ -15,7 +15,7 @@
 ## 使用サービス
 
 ### 音声合成
-VOICEVOXを使用しています。
+[VOICEVOX](https://voicevox.hiroshiba.jp/)を使用しています。
 
 VOICEVOX:ずんだもん
 
