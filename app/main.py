@@ -25,5 +25,5 @@ if __name__ == "__main__":
     print("ChatGPTの応答:" + response)
 
     # 思い切って音声合成してみる
-    voice.synthesize(response, speaker=1, output_path=f"output.wav")
+    voice.synthesize(response)
     print("音声合成が完了しました。output.wavに保存されました。")
