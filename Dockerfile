@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt
 
 ENV TZ=Asia/Tokyo
 
-CMD ["sleep", "infinity"]
+CMD ["python3","/daily_weather/app/main.py"]

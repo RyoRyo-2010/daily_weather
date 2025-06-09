@@ -1,15 +1,13 @@
 # 開発の道しるべ
 
 ## 実行環境
-DockerでVOICEVOXを起動していること。　これで、あとdocker-composeとかでいい感じにアレする
+ただdocker execでやる。だってvoicevox使わないんだもん。
 
 ## 動作
 このプログラムはDockerコンテナにされる。で、別のプログラムにより呼び出される。
 
 まず~~OpenWeatherMap~~気象庁の非公式APIから天気を取得し、Chat GPTで要約する。それをVOICEVOXに渡して音声ファイル作成。
 OpenWeatherMapはアカウント作成に制限があるため、ひとまず気象庁のやつで対応。
-
-ホスト側の別プログラムから音声を再生。
 
 ## ChatGPTにわたすプロンプト
 - 今日の天気
