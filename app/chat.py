@@ -19,7 +19,12 @@ def create_prompt(setumei_text, chance_of_rains, teletop):
     Today's weather: {teletop}
     Based on this information, write a concise explanation in JAPANESE.簡潔に！
     """
-    return prompt.strip()  # 不要な空白を削除して返す
+
+    # 不要な空白や改行を消す
+    prompt = prompt.replace("\n\n", "\n")
+    prompt = prompt.rstrip("\n")
+    prompt = prompt.strip()
+    return prompt
 
 def post_for_chatgpt(prompt):
     """
