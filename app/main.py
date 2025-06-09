@@ -1,6 +1,6 @@
 import weather
 import chat
-import voice
+import discord
 import datetime
 if __name__ == "__main__":
     print("daily_weather is starting...")
@@ -11,9 +11,6 @@ if __name__ == "__main__":
         print(f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} 天気予報の取得に失敗しました。\n")
         exit(-1)
 
-    # ChatGPT向けにテキストに手を加える
-    # 無駄な改行を削除
-
     # ChatGPTに投げる
     prompt = chat.create_prompt(setumei_text, chance_of_rains, teletop)
     print("できたてのプロンプト:" + prompt)
@@ -21,7 +18,7 @@ if __name__ == "__main__":
     response = chat.post_for_chatgpt(prompt)
     print("ChatGPTの応答:" + response)
 
-    # 思い切って音声合成してみる
-    today = datetime.datetime.now()
-    voice.synthesize(f"おはようございます。今日は{today.month}月{today.day}日です。今日の山口県中部の天気をお伝えします。{response}今日も良い一日をお過ごしください。")
-    print("音声合成が完了しました。output.wavに保存されました。")
+    # discordに投げる
+    message = f"おはようございます。今日は{datetime.datetime.now().strftime("%m月%d日")}です。山口県中部の天気をお伝えします。{response}\n" + _
+    f"午前中の降水確率:{chance_of_rains["T06_12"]}、午後の降水確率:{chance_of_rains["T12_18"]}"
+    discord.post_to_discord(message)
