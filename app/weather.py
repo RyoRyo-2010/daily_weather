@@ -7,7 +7,7 @@ def get_weather():
         data = res.json()
         setumei_text = data["description"]["bodyText"] # 山口県は、高気圧...
         chance_of_rains = data["forecasts"][0]["chanceOfRain"] # n%の表記のリスト(length:たぶん4くらい)
-        teletop = data["forecasts"][0]["detail"]["weather"] # 晴れ時々曇りとか
+        teletop = data["forecasts"][0]["telop"] # 晴れ時々曇りとか
         return setumei_text, chance_of_rains, teletop
     else:
         print("天気予報の取得に失敗しました。")
