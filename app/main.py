@@ -23,4 +23,6 @@ if __name__ == "__main__":
     # discordに投げる
     message = f"おはようございます。今日は{datetime.datetime.now().strftime("%m月%d日")}です。山口県中部の天気をお伝えします。{response}\n" + \
     f"午前中の降水確率:{chance_of_rains["T06_12"]}、午後の降水確率:{chance_of_rains["T12_18"]}"
+
+    discord.post_to_discord(discord.weather_to_icon(teletop))
     discord.post_to_discord(message)

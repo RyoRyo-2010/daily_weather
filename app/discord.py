@@ -16,4 +16,10 @@ def post_to_discord(message):
 
     response = requests.request("POST", URL, headers=headers, data=payload)
 
-
+def weather_to_icon(weather_type):
+    keys = [{"weather":"晴","icon":":sunny:"}]
+    for key in keys:
+        if(key["weather"] == weather_type):
+            return key["icon"]
+    
+    return f"未定義です。\nweather_type=`{weather_type:weather_type}`"
